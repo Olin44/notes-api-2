@@ -4,8 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import pl.notes.app.exceptions.NoteNotFoundException;
 import pl.notes.model.Note;
 import pl.notes.model.NoteCreateRequest;
 import pl.notes.model.NotePage;
@@ -13,7 +13,6 @@ import pl.notes.model.NoteUpdateRequest;
 
 import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.UUID;
 
 @Service
@@ -52,21 +51,17 @@ public class NotesService {
 
 
     public void notesIdDelete(UUID id) {
-        NoteEntity noteEntity = notesRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Note with ID " + id + " not found"));
-
+        NoteEntity noteEntity = findNoteEntityById(id);
         notesRepository.delete(noteEntity);
     }
 
     public Note notesIdGet(UUID id) {
-        NoteEntity noteEntity = notesRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Note with ID " + id + " not found"));
+        NoteEntity noteEntity = findNoteEntityById(id);
         return mapNoteEntityToNote(noteEntity);
     }
 
     public Note notesIdPut(UUID id, NoteUpdateRequest noteUpdateRequest) {
-        NoteEntity noteEntity = notesRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Note with ID " + id + " not found"));
+        NoteEntity noteEntity = findNoteEntityById(id);
 
         noteEntity.setTitle(noteUpdateRequest.getTitle());
         noteEntity.setContent(noteUpdateRequest.getContent());
@@ -90,6 +85,11 @@ public class NotesService {
                 .content(noteEntity.getContent())
                 .title(noteEntity.getTitle())
                 .createdAt(noteEntity.getCreatedAt());
+    }
+
+    private NoteEntity findNoteEntityById(UUID id) {
+        return notesRepository.findById(id)
+                .orElseThrow(() -> new NoteNotFoundException("Note with ID " + id + " not found"));
     }
 
 
