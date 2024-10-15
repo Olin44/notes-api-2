@@ -84,6 +84,10 @@ paths:
                 $ref: '#/components/schemas/Note'
         '404':
           description: Note not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
     put:
       summary: Update a specific note
@@ -110,6 +114,10 @@ paths:
                 $ref: '#/components/schemas/Note'
         '404':
           description: Note not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
     delete:
       summary: Delete a specific note
@@ -126,6 +134,10 @@ paths:
           description: Note deleted successfully.
         '404':
           description: Note not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 
 components:
   schemas:
@@ -190,3 +202,30 @@ components:
         last:
           type: boolean
           example: false
+
+    ErrorResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Invalid input"
+        reason:
+          type: string
+          example: "The provided note ID does not exist"
+        codeHTTP:
+          type: integer
+          format: int32
+          example: 404
+      required:
+        - message
+        - reason
+        - codeHTTP
+      description: |
+        Represents an error response.
+
+        **Constructor:**
+        - `ErrorResponse(String message, String reason, int codeHTTP)`:
+          - `message`: A description of the error.
+          - `reason`: The reason for the error.
+          - `codeHTTP`: The HTTP status code related to the error.
+    
