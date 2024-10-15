@@ -3,7 +3,13 @@ package pl.notes.app;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.notes.api.NotesApi;
 import pl.notes.model.Note;
@@ -19,17 +25,15 @@ import java.util.UUID;
 public class NotesController implements NotesApi {
 
     private final NotesService notesService;
-
     @Override
-    public ResponseEntity<NotePage> notesGet(Integer page, Integer size, String sort, String direction) {
+    public ResponseEntity<NotePage> notesGet(
+            @RequestParam(defaultValue = "0") Integer page,
+            @RequestParam(defaultValue = "10") Integer size,
+            @RequestParam(defaultValue = "title") String sort,
+            @RequestParam(defaultValue = "asc") String direction
+    ) {
         NotePage response = notesService.notesGet(page, size, sort, direction);
         return ResponseEntity.ok(response);
-    }
-
-    @Override
-    public ResponseEntity<Void> notesIdDelete(UUID id) {
-        notesService.notesIdDelete(id);
-        return ResponseEntity.noContent().build();
     }
 
     @Override
@@ -39,11 +43,28 @@ public class NotesController implements NotesApi {
     }
 
     @Override
-    public ResponseEntity<Note> notesIdPut(UUID id, NoteUpdateRequest noteUpdateRequest) {
+    public ResponseEntity<Void> notesIdDelete(UUID id) {
+        notesService.notesIdDelete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/editnote.html")
+    public String editNoteForm(@RequestParam UUID id, Model model) {
+        Note note = notesService.notesIdGet(id); // Pobierz notatkę na podstawie ID
+        model.addAttribute("note", note); // Dodaj notatkę do modelu
+        return "editNote"; // Zwróć nazwę widoku (np. editNote.html)
+    }
+
+
+    @PutMapping("/notes/{id}")
+    public ResponseEntity<Note> notesIdPut(@PathVariable UUID id, @RequestBody NoteUpdateRequest noteUpdateRequest) {
+        // Logowanie id i noteUpdateRequest
+        System.out.println("Updating note with ID: " + id);
+        System.out.println("Note update request: " + noteUpdateRequest);
+
         Note response = notesService.notesIdPut(id, noteUpdateRequest);
         return ResponseEntity.ok(response);
     }
-
     @Override
     public ResponseEntity<Note> notesPost(NoteCreateRequest noteCreateRequest) {
         Note response = notesService.notesPost(noteCreateRequest);
