@@ -26,17 +26,13 @@ public class NotesController implements NotesApi {
 
     private final NotesService notesService;
     @Override
-    public ResponseEntity<NotePage> notesGet(
-            @RequestParam(defaultValue = "0") Integer page,
-            @RequestParam(defaultValue = "10") Integer size,
-            @RequestParam(defaultValue = "title") String sort,
-            @RequestParam(defaultValue = "asc") String direction
+    public ResponseEntity<NotePage> notesGet(Integer page, Integer size, String sort, String direction
     ) {
         NotePage response = notesService.notesGet(page, size, sort, direction);
         return ResponseEntity.ok(response);
     }
 
-    @Override
+    @Override // do wyjebania chyba
     public ResponseEntity<Note> notesIdGet(UUID id) {
         Note response = notesService.notesIdGet(id);
         return ResponseEntity.ok(response);
