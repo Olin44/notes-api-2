@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Edytuj Notatkę</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edytuj Notatkę</h1>
+    <form id="editNoteForm">
+        <input type="hidden" id="noteId" name="noteId">
+
+        <label for="title">Tytuł:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Zawartość:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">Zapisz Zmiany</button>
+    </form>
+
+    <button onclick="window.location.href='/notes.html'">Powrót do Notatek</button>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const noteId = urlParams.get('id');
+
+        // Funkcja do ładowania notatki
+        function loadNote() {
+            fetch(`http://localhost:8082/api/v1/notes/${noteId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Notatka nie znaleziona');
+                    }
+                    return response.json();
+                })
+                .then(note => {
+                    // Wypełnij pola formularza danymi notatki
+                    document.getElementById('noteId').value = note.id; // Ustaw id notatki
+                    document.getElementById('title').value = note.title; // Ustaw tytuł
+                    document.getElementById('content').value = note.content; // Ustaw zawartość
+                })
+                .catch(error => {
+                    console.error('Błąd:', error);
+                    alert('Wystąpił błąd podczas ładowania notatki.');
+                });
+        }
+
+        // Funkcja do aktualizacji notatki
+        document.getElementById('editNoteForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Zatrzymaj standardowe przesyłanie formularza
+
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            fetch(`http://localhost:8082/api/v1/notes/${noteId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ title, content })
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = '/notes.html'; // Przekierowanie na stronę notatek
+                } else {
+                    alert('Wystąpił błąd podczas aktualizacji notatki.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        // Ładuj notatkę po załadowaniu strony
+        window.onload = loadNote;
+    </script>
+
+</body>
+
+</html>

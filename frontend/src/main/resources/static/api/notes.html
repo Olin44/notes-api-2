@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Notes</title>
+</head>
+<body>
+<h1>List of Notes</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Created At</th>
+    </tr>
+    <tr th:each="note : ${notes}">
+        <td th:text="${note.title}">Note Title</td>
+        <td th:text="${note.content}">Note Content</td>
+        <td th:text="${note.createdAt}">Note Date</td>
+    </tr>
+</table>
+</body>
+</html>

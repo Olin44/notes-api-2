@@ -1,14 +1,15 @@
-
+version: '3'
 services:
-#  app:
-#    image:  notes-api
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-#    ports:
-#      - "8080:8080"
 
-  db:
+  #  app:
+  #    image:  notes-api
+  #    build:
+  #      context: .
+  #      dockerfile: Dockerfile
+  #    ports:
+  #      - "8080:8080"
+
+  postgres-db:
     image: postgres
     environment:
       POSTGRES_DB: notes
@@ -24,5 +25,37 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - "5051:80"
+
+  auth-service:
+    image: auth-service:latest
+    build:
+      context: ./auth-service
+    ports:
+      - "8081:8081"
+    environment:
+      JWT_SECRET: 9147b4f15b4157f56c414d1cd3436eba5e50833aca2d47a7625c1d07aad9e2f9
+
+  notes-service:
+    image: notes-service:latest
+    build:
+      context: ./notes-service
+    ports:
+      - "8082:8082"
+    environment:
+      POSTGRES_DB: notes
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    depends_on:
+      - postgres-db
+
+  frontend:
+    image: frontend:latest
+    build:
+      context: ./frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - auth-service
+      - notes-service
 
 
