@@ -50,5 +50,17 @@ public class FrontendController {
         return "redirect:/notes"; // Przekierowanie na stronę z listą notatek
     }
 
+    @GetMapping("/addNote")
+    public String showAddNoteForm(Model model) {
+        model.addAttribute("note", new NoteCreateRequest()); // lub NoteUpdateRequest, w zależności od tego, jak chcesz modelować
+        return "addnote"; // Nazwa widoku do wyświetlenia formularza
+    }
+
+    @PostMapping("/addNote")
+    public String addNote(@ModelAttribute NoteCreateRequest noteCreateRequest) {
+        notesServiceClient.addNote(noteCreateRequest); // Wywołanie metody do dodania notatki w NotesServiceClient
+        return "redirect:/notes"; // Przekierowanie do listy notatek po dodaniu
+    }
+
 
 }

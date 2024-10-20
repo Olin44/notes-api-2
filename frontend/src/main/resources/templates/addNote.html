@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj Nową Notatkę</title>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .cancel-button {
+            background-color: #f44336; /* Czerwony dla przycisku anulowania */
+        }
+
+        .cancel-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dodaj Nową Notatkę</h1>
+    <div class="container">
+        <form th:action="@{/addNote}" method="post">
+            <label for="title">Tytuł:</label>
+            <input type="text" id="title" name="title" required/>
+
+            <label for="content">Zawartość:</label>
+            <textarea id="content" name="content" rows="10" required></textarea>
+
+            <button type="submit">Dodaj Notatkę</button>
+            <button type="button" class="cancel-button" onclick="window.location.href='@{/notes}'">Anuluj</button>
+        </form>
+    </div>
+</body>
+</html>
