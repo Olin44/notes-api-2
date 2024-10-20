@@ -12,7 +12,7 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            const response = await fetch('/api/auth/signup', {
+            const response = await fetch('http://localhost:8081/api/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

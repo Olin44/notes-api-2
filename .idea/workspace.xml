@@ -4,44 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="added authentication">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/NotesApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/NoteEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/NotesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/NotesRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/NotesService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/auth/AuthenticationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/auth/AuthenticationRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/auth/AuthenticationResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/auth/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/auth/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/config/ApplicationConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/config/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/config/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/config/SecurityConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/exceptions/CustomExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/exceptions/NoteNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/user/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/user/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/notes/app/user/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/contract/notes-contract.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/addNote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/api/auth/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/api/auth/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/editNote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/notes.html" beforeDir="false" />
+    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="added full project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/notes.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/static/api/notes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +65,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.NotesApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;full&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Radek/Desktop/SpringBoot/2024/notes-api&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -124,7 +94,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Application.NotesApiApplication">
     <configuration name="NotesApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NotesApiApplication" />
       <module name="notes-api" />
@@ -217,6 +187,11 @@
       <workItem from="1729199301279" duration="286000" />
       <workItem from="1729199737932" duration="216000" />
       <workItem from="1729199979905" duration="38000" />
+      <workItem from="1729241067228" duration="527000" />
+      <workItem from="1729332394351" duration="631000" />
+      <workItem from="1729413002713" duration="634000" />
+      <workItem from="1729414335568" duration="17000" />
+      <workItem from="1729416118441" duration="82000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -266,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729165798427</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added full project">
+      <option name="closed" value="true" />
+      <created>1729241136696</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729241136696</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,6 +272,7 @@
     <MESSAGE value="added ErrorResponse.java to notes-contract.yml" />
     <MESSAGE value="added html and js to project" />
     <MESSAGE value="added authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="added authentication" />
+    <MESSAGE value="added full project" />
+    <option name="LAST_COMMIT_MESSAGE" value="added full project" />
   </component>
 </project>
