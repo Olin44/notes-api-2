@@ -32,7 +32,6 @@ public class FrontendController {
     @GetMapping("/editnote/{id}")
     public String editNote(@PathVariable UUID id, Model model) {
         Note note = notesServiceClient.getNoteById(id); // Zmień to na odpowiednią metodę w kliencie Feign
-        System.out.println(id);
         model.addAttribute("note", note);
         return "editNote"; // Zwraca widok, w którym możesz edytować notatkę
     }
@@ -53,7 +52,7 @@ public class FrontendController {
     @GetMapping("/addNote")
     public String showAddNoteForm(Model model) {
         model.addAttribute("note", new NoteCreateRequest()); // lub NoteUpdateRequest, w zależności od tego, jak chcesz modelować
-        return "addnote"; // Nazwa widoku do wyświetlenia formularza
+        return "addNote"; // Nazwa widoku do wyświetlenia formularza
     }
 
     @PostMapping("/addNote")

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="changed frontend to thymeleaf">
+    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="CRUD completed">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +91,7 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.NotesApiApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="NotesApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="NotesApiApplication" />
       <module name="notes-api" />
@@ -134,6 +136,19 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="frontend" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml.postgres-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -150,6 +165,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.postgres-db: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Application.NotesApiApplication" />
@@ -188,6 +204,8 @@
       <workItem from="1729414335568" duration="17000" />
       <workItem from="1729416118441" duration="82000" />
       <workItem from="1729421530016" duration="666000" />
+      <workItem from="1729423232559" duration="350000" />
+      <workItem from="1729606475573" duration="490000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -253,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729421566424</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CRUD completed">
+      <option name="closed" value="true" />
+      <created>1729423272354</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729423272354</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +304,7 @@
     <MESSAGE value="added authentication" />
     <MESSAGE value="added full project" />
     <MESSAGE value="changed frontend to thymeleaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed frontend to thymeleaf" />
+    <MESSAGE value="CRUD completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD completed" />
   </component>
 </project>
