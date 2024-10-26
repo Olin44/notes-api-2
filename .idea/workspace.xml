@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="CRUD completed">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="added registration and login pages">
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/AuthServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/auth/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/api/notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/static/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/notes.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/notes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +62,10 @@
   &quot;keyToString&quot;: {
     &quot;Application.NotesApiApplication.executor&quot;: &quot;Run&quot;,
     &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.auth-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.notes-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.notes-api [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.notes-api [clean].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -92,29 +106,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
-    <configuration name="NotesApiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="NotesApiApplication" />
-      <module name="notes-api" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NotesApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="notes-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pl.notes.NotesApiApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="001" />
-          <option name="containerName" value="Notes" />
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -136,12 +133,38 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.auth-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="auth-service" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
               <option value="frontend" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yml.notes-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="notes-service" />
             </list>
           </option>
           <option name="sourceFilePath" value="docker-compose.yml" />
@@ -165,10 +188,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.notes-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.auth-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.postgres-db: Compose Deployment" />
-        <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Application.NotesApiApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -206,6 +229,10 @@
       <workItem from="1729421530016" duration="666000" />
       <workItem from="1729423232559" duration="350000" />
       <workItem from="1729606475573" duration="490000" />
+      <workItem from="1729608994967" duration="192000" />
+      <workItem from="1729704592382" duration="451000" />
+      <workItem from="1729963390346" duration="2957000" />
+      <workItem from="1729966387396" duration="5681000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -279,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729423272354</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="CRUD completed">
+      <option name="closed" value="true" />
+      <created>1729609155392</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729609155392</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,6 +340,7 @@
     <MESSAGE value="added full project" />
     <MESSAGE value="changed frontend to thymeleaf" />
     <MESSAGE value="CRUD completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD completed" />
+    <MESSAGE value="added registration and login pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="added registration and login pages" />
   </component>
 </project>

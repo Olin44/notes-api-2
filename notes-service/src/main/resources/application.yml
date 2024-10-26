@@ -17,3 +17,7 @@ spring:
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  secret:
+    key: 9147b4f15b4157f56c414d1cd3436eba5e50833aca2d47a7625c1d07aad9e2f9

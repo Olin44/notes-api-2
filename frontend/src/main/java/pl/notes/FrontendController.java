@@ -1,6 +1,7 @@
 package pl.notes;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import java.util.UUID;
 public class FrontendController {
 
     private final NotesServiceClient notesServiceClient;
+    private final AuthServiceClient authServiceClient;
 
     @GetMapping("/notes")
     public String getNotes(Model model) {
@@ -61,5 +63,47 @@ public class FrontendController {
         return "redirect:/notes"; // Przekierowanie do listy notatek po dodaniu
     }
 
+    @GetMapping("/register")
+    public String showSignup(Model model) {
+        model.addAttribute("user", new RegisterRequest());
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String signup(@ModelAttribute RegisterRequest request, Model model) {
+        try {
+            authServiceClient.signup(request);
+            return "redirect:/login"; // Po udanej rejestracji przekierowanie na stronę logowania
+        } catch (Exception e) {
+            // Obsługa wyjątku (np. jeśli email już istnieje)
+            model.addAttribute("errorMessage", "Rejestracja nie powiodła się. Spróbuj ponownie.");
+            model.addAttribute("user", request); // Utrzymanie wprowadzonego emaila w formularzu
+            return "register";
+        }
+    }
+
+    @GetMapping("/login")
+    public String showLoginPage(Model model) {
+        model.addAttribute("user", new RegisterRequest());
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(@ModelAttribute RegisterRequest request, Model model) {
+        try {
+            // Odbieramy token z odpowiedzi
+            AuthenticationResponse response = authServiceClient.authenticate(request);
+            String token = response.token(); // Przyjmujemy, że masz getToken() w AuthenticationResponse
+
+            // Zapisz token w modelu, aby użyć go w widoku
+            model.addAttribute("jwtToken", token);
+
+            return "redirect:/notes"; // Po udanym logowaniu przekierowanie na stronę notes
+        } catch (Exception e) {
+            model.addAttribute("errorMessage", "Logowanie nie powiodło się. Spróbuj ponownie.");
+            model.addAttribute("user", request); // Utrzymanie wprowadzonego emaila w formularzu
+            return "login";
+        }
+    }
 
 }
