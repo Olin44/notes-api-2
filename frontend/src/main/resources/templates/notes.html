@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Notatki</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notes</title>
-    
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -64,6 +65,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Lista Notatek</h1>
 
@@ -88,14 +90,15 @@
                 <td>
                     <a th:href="@{/editnote/{id}(id=${note.id})}">Edytuj</a>
                     <form th:action="@{/deletenote/{id}(id=${note.id})}" method="post" style="display:inline;">
-                        <button type="submit" onclick="return confirm('Czy na pewno chcesz usunąć tę notatkę?');">Usuń</button>
+                        <button type="submit"
+                            onclick="return confirm('Czy na pewno chcesz usunąć tę notatkę?');">Usuń</button>
                     </form>
                 </td>
             </tr>
         </tbody>
     </table>
     <script>
-        window.onload = function() {
+        window.onload = function () {
             const token = localStorage.getItem('jwtToken'); // Pobierz token z localStorage
             fetch('/notes', {
                 method: 'GET',
@@ -103,21 +106,22 @@
                     'Authorization': 'Bearer ' + token // Dodaj token do nagłówka
                 }
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Obsłuż dane, np. wyświetl notatki na stronie
-                console.log(data);
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Obsłuż dane, np. wyświetl notatki na stronie
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
         };
     </script>
-    
+
 </body>
+
 </html>

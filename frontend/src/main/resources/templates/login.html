@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <title>Logowanie</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
+        /* Stylizacja formularza logowania */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #e9ecef;
-            /* Light gray background */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* Full viewport height */
-            text-align: center;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
         }
 
         .container {
@@ -30,21 +25,6 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            /* Animation for scaling */
-        }
-
-        .container:hover {
-            transform: scale(1.02);
-            /* Slightly increase size on hover */
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-            /* Darker gray for labels */
         }
 
         input[type="email"],
@@ -54,19 +34,6 @@
             margin-bottom: 15px;
             border: 1px solid #ced4da;
             border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-            /* Increased font size */
-            transition: border-color 0.3s;
-            /* Animation for border color */
-        }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-color: #4CAF50;
-            /* Green border on focus */
-            outline: none;
-            /* Remove default outline */
         }
 
         button {
@@ -76,80 +43,66 @@
             padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            /* Animation for background color */
-        }
-
-        button:hover {
-            background-color: #45a049;
-            /* Darker green on hover */
-        }
-
-        p {
-            margin-top: 20px;
-            font-size: 14px;
-            /* Slightly larger text for readability */
-        }
-
-        a {
-            color: #007BFF;
-            /* Bootstrap primary color for links */
-            text-decoration: none;
-            /* Remove underline */
-        }
-
-        a:hover {
-            text-decoration: underline;
-            /* Underline on hover */
         }
 
         .error-message {
             color: red;
-            /* Error message color */
             margin-top: 15px;
         }
     </style>
     <script>
-        // Funkcja do przechowywania tokenu w localStorage
-        function storeToken(token) {
-            localStorage.setItem('jwtToken', token);
-        }
-    
-        // Po załadowaniu strony, zapisz token w localStorage
-        window.onload = function() {
-            const token = /*[[${jwtToken}]]*/ ''; // Użyj Thymeleaf, aby wstawić token do JS
-            if (token) {
-                storeToken(token);
+        async function login(event) {
+            event.preventDefault(); // Zatrzymaj domyślną akcję formularza
+
+            const formData = new FormData(event.target);
+            const loginRequest = {
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
+
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginRequest)
+            });
+
+            if (response.ok) {
+                const token = response.headers.get('Authorization'); // Odczytanie tokena z nagłówka
+                if (token) {
+                    localStorage.setItem('jwtToken', token.split(' ')[1]); // Przechowaj token
+                    window.location.href = '/notes'; // Przekierowanie do notatek
+                }
+            } else {
+                const errorMessage = await response.text();
+                document.querySelector('.error-message').innerText = errorMessage; // Wyświetlenie komunikatu o błędzie
             }
-        };
+        }
     </script>
-    
-    
 </head>
 
 <body>
     <div class="container">
         <h1>Logowanie</h1>
 
-        <form th:action="@{/login}" th:object="${user}" method="post">
+        <form onsubmit="login(event)">
             <div>
                 <label>Email:</label>
-                <input type="email" th:field="*{email}" required />
+                <input type="email" name="email" required />
             </div>
             <div>
                 <label>Hasło:</label>
-                <input type="password" th:field="*{password}" required />
+                <input type="password" name="password" required />
             </div>
             <div>
                 <button type="submit">Zaloguj się</button>
             </div>
         </form>
-        <p>Nie masz konta? <a th:href="@{/register}">Zarejestruj się</a></p>
 
-        <div th:if="${errorMessage}">
-            <p class="error-message" th:text="${errorMessage}"></p>
-        </div>
+        <div class="error-message"></div>
+
+        <p>Nie masz konta? <a th:href="@{/register}">Zarejestruj się</a></p>
     </div>
 </body>
 

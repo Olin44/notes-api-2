@@ -1,6 +1,8 @@
 package pl.notes;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.UUID;
@@ -89,21 +92,26 @@ public class FrontendController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute RegisterRequest request, Model model) {
-        try {
-            // Odbieramy token z odpowiedzi
-            AuthenticationResponse response = authServiceClient.authenticate(request);
-            String token = response.token(); // Przyjmujemy, że masz getToken() w AuthenticationResponse
+    public ResponseEntity<?> login(@RequestBody RegisterRequest request) {
+        // Logika autoryzacji
+        AuthenticationResponse token = authServiceClient.authenticate(request);
 
-            // Zapisz token w modelu, aby użyć go w widoku
-            model.addAttribute("jwtToken", token);
+        System.out.println("XXX");
+        System.out.println(token);
 
-            return "redirect:/notes"; // Po udanym logowaniu przekierowanie na stronę notes
-        } catch (Exception e) {
-            model.addAttribute("errorMessage", "Logowanie nie powiodło się. Spróbuj ponownie.");
-            model.addAttribute("user", request); // Utrzymanie wprowadzonego emaila w formularzu
-            return "login";
+        if (token != null) {
+            // Ustaw token w holderze
+            TokenHolder.setToken(token.token()); // Ustaw token w statycznym polu
+
+            // Możesz także zwrócić inne dane, jeśli potrzebujesz
+            return ResponseEntity.ok()
+                    .body(token.token()); // Możesz zmodyfikować to, co zwracasz w ciele odpowiedzi
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
     }
+
+
+
 
 }
