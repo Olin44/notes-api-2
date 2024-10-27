@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 import java.util.List;
 import java.util.UUID;
@@ -23,15 +24,17 @@ public class FrontendController {
     private final AuthServiceClient authServiceClient;
 
     @GetMapping("/notes")
-    public String getNotes(Model model) {
-        NotePage notePage = notesServiceClient.getNotes(0, 10, "createdAt", "ASC");
+    public String getNotes(@RequestHeader ("Authorization") String authorizationHeader, Model model) {
+        System.out.println("YYYYY");
+        System.out.println(authorizationHeader);
+        NotePage notePage = notesServiceClient.getNotes(0, 10, "createdAt", "ASC", authorizationHeader);
         List<Note> notes = notePage.getContent();
 
         model.addAttribute("notes", notes);
         model.addAttribute("currentPage", notePage.getPage());
         model.addAttribute("totalPages", notePage.getTotalPages());
 
-        return "notes"; // Zwróć widok z listą notatek
+        return "frontendNotes"; // Zwróć widok z listą notatek
     }
 
     @GetMapping("/editnote/{id}")
@@ -92,7 +95,7 @@ public class FrontendController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody RegisterRequest request) {
+    public ResponseEntity<AuthenticationResponse> login(@RequestBody RegisterRequest request) {
         // Logika autoryzacji
         AuthenticationResponse token = authServiceClient.authenticate(request);
 
@@ -100,14 +103,13 @@ public class FrontendController {
         System.out.println(token);
 
         if (token != null) {
-            // Ustaw token w holderze
-            TokenHolder.setToken(token.token()); // Ustaw token w statycznym polu
+
 
             // Możesz także zwrócić inne dane, jeśli potrzebujesz
             return ResponseEntity.ok()
-                    .body(token.token()); // Możesz zmodyfikować to, co zwracasz w ciele odpowiedzi
+                    .body(token); // Możesz zmodyfikować to, co zwracasz w ciele odpowiedzi
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+            throw new RuntimeException();
         }
     }
 

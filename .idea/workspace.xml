@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="...">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FeignClientInterceptor.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/TokenHolder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/notes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +60,7 @@
     &quot;Docker.docker-compose.yml.auth-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml.notes-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.notes-service/Dockerfile builder.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.notes-api [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.notes-api [clean].executor&quot;: &quot;Run&quot;,
@@ -161,15 +168,14 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.postgres-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
+    <configuration name="notes-service/Dockerfile builder" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
         <settings>
-          <option name="services">
-            <list>
-              <option value="postgres-db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
+          <option name="imageTag" value="maven3.9.6-eclipse-temurin_builder" />
+          <option name="buildCliOptions" value="--target builder" />
+          <option name="buildKitEnabled" value="true" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="notes-service/Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
@@ -177,10 +183,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.notes-service: Compose Deployment" />
+        <item itemvalue="Docker.notes-service/Dockerfile builder" />
         <item itemvalue="Docker.docker-compose.yml.auth-service: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yml.notes-service: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.postgres-db: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -224,6 +230,8 @@
       <workItem from="1729966387396" duration="5936000" />
       <workItem from="1730043106158" duration="8000" />
       <workItem from="1730044476245" duration="7900000" />
+      <workItem from="1730055871443" duration="2467000" />
+      <workItem from="1730059330928" duration="5283000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

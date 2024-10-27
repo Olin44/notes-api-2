@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.UUID;
@@ -16,9 +17,10 @@ public interface NotesServiceClient {
 
     @GetMapping("/notes")
     NotePage getNotes(@RequestParam(value = "page", defaultValue = "0") Integer page,
-                        @RequestParam(value = "size", defaultValue = "10") Integer size,
-                        @RequestParam(value = "sort", defaultValue = "createdAt") String sort,
-                        @RequestParam(value = "direction", defaultValue = "ASC") String direction);
+                      @RequestParam(value = "size", defaultValue = "10") Integer size,
+                      @RequestParam(value = "sort", defaultValue = "createdAt") String sort,
+                      @RequestParam(value = "direction", defaultValue = "ASC") String direction,
+                      @RequestHeader("Authorization") String authorizationHeader);
 
     @GetMapping("/notes/{id}")
     Note getNoteById(@PathVariable("id") UUID id); // Pobierz notatkę do edycji

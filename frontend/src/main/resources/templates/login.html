@@ -68,15 +68,24 @@
                 body: JSON.stringify(loginRequest)
             });
 
-            if (response.ok) {
-                const token = response.headers.get('Authorization'); // Odczytanie tokena z nagłówka
-                if (token) {
-                    localStorage.setItem('jwtToken', token.split(' ')[1]); // Przechowaj token
-                    window.location.href = '/notes'; // Przekierowanie do notatek
+            async function fetchNotes() {
+                const token = localStorage.getItem('jwtToken');
+
+                const response = await fetch('/notes', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    const notesData = await response.json(); // Odbierz dane notatek
+                    // Załaduj dane do widoku (np. manipulując DOM)
+                    renderNotes(notesData); // Funkcja renderująca notatki na stronie
+                } else {
+                    console.error("Błąd podczas pobierania notatek");
                 }
-            } else {
-                const errorMessage = await response.text();
-                document.querySelector('.error-message').innerText = errorMessage; // Wyświetlenie komunikatu o błędzie
             }
         }
     </script>
