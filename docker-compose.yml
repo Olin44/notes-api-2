@@ -48,14 +48,14 @@ services:
     depends_on:
       - postgres-db
 
-  frontend:
-    image: frontend:latest
-    build:
-      context: ./frontend
-    ports:
-      - "8080:8080"
-    depends_on:
-      - auth-service
-      - notes-service
+#  frontend:
+#    image: frontend:latest
+#    build:
+#      context: ./frontend
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - auth-service
+#      - notes-service
 
 

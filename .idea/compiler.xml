@@ -6,10 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="notes-api" />
+        <module name="notes-api-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="notes-api" target="1.5" />
+      <module name="notes-api (1)" target="21" />
+      <module name="notes-api (2)" target="21" />
+      <module name="notes-api (3)" target="21" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="notes-api" options="-parameters" />
+      <module name="notes-api (1)" options="-parameters" />
+      <module name="notes-api (2)" options="-parameters" />
+      <module name="notes-api (3)" options="-parameters" />
+      <module name="notes-api-auth" options="-parameters" />
+    </option>
   </component>
 </project>

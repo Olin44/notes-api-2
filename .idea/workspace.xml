@@ -4,125 +4,130 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="nieszczesne notatki">
+    <list default="true" id="3c06018e-9f89-4e6a-a952-80d32d46927a" name="Changes" comment="added react app, config cors">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NoteDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NoteForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NotesList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/notes-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/notes-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/NotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/NotesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-service/src/main/resources/contract/notes-contract.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/resources/contract/notes-contract.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/AuthServiceClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/AuthenticationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/Note.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NoteCreateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotePage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NoteUpdateRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesApiApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/RegisterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/addNote.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/editNote.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/config/SecurityConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Record" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/notes-service/src/main/gen">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/notes-app" />
   </component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2nQwK25kckJmSbyEbRAe1QNOJjG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2o4zDeczeoicjVdJ7HNn67hisSh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.NotesApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.auth-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.notes-service: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.notes-service/Dockerfile builder.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.notes-api [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.notes-api [clean].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.NotesApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;full&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Radek/Desktop/SpringBoot/2024/notes-api&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\src\main\java\pl\notes\app" />
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\src\main\java\pl\notes\app\user" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\frontend\src\main\resources" />
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\src\main\resources\static" />
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\src\main\resources\static\api\auth" />
-      <recent name="C:\Users\Radek\Desktop\SpringBoot\2024\notes-api\src\main\java\pl\notes\app\auth" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="alwaysdata.net" />
+      <command value="mvn idea:idea" />
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
-    <configuration name="NotesApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
       <module name="notes-api" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pl.notes.NotesApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="notes-api" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml">
-        <settings />
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile">
-        <settings />
-      </deployment>
+      <deployment type="docker-compose.yml" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -133,245 +138,21 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.auth-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="auth-service" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="frontend" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.notes-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="notes-service" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="notes-service/Dockerfile builder" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="imageTag" value="maven3.9.6-eclipse-temurin_builder" />
-          <option name="buildCliOptions" value="--target builder" />
-          <option name="buildKitEnabled" value="true" />
-          <option name="buildOnly" value="true" />
-          <option name="sourceFilePath" value="notes-service/Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.notes-service/Dockerfile builder" />
-        <item itemvalue="Docker.docker-compose.yml.auth-service: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.notes-service: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="" />
-      <created>1728918540356</created>
+      <changelist id="3c06018e-9f89-4e6a-a952-80d32d46927a" name="Changes" comment="" />
+      <created>1730143518820</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1728918540356</updated>
-      <workItem from="1728918541446" duration="11853000" />
-      <workItem from="1728933042746" duration="440000" />
-      <workItem from="1728933499634" duration="2731000" />
-      <workItem from="1728983838656" duration="6563000" />
-      <workItem from="1729004481989" duration="11452000" />
-      <workItem from="1729074942820" duration="13014000" />
-      <workItem from="1729165533992" duration="270000" />
-      <workItem from="1729193705062" duration="2161000" />
-      <workItem from="1729199301279" duration="286000" />
-      <workItem from="1729199737932" duration="216000" />
-      <workItem from="1729199979905" duration="38000" />
-      <workItem from="1729241067228" duration="527000" />
-      <workItem from="1729332394351" duration="631000" />
-      <workItem from="1729413002713" duration="634000" />
-      <workItem from="1729414335568" duration="17000" />
-      <workItem from="1729416118441" duration="82000" />
-      <workItem from="1729421530016" duration="666000" />
-      <workItem from="1729423232559" duration="350000" />
-      <workItem from="1729606475573" duration="490000" />
-      <workItem from="1729608994967" duration="192000" />
-      <workItem from="1729704592382" duration="451000" />
-      <workItem from="1729963390346" duration="2957000" />
-      <workItem from="1729966387396" duration="5936000" />
-      <workItem from="1730043106158" duration="8000" />
-      <workItem from="1730044476245" duration="7900000" />
-      <workItem from="1730055871443" duration="2467000" />
-      <workItem from="1730059330928" duration="5664000" />
-      <workItem from="1730124240630" duration="1278000" />
-      <workItem from="1730125536096" duration="214000" />
-      <workItem from="1730125771671" duration="81000" />
-      <workItem from="1730125868176" duration="6261000" />
-      <workItem from="1730132876368" duration="110000" />
-      <workItem from="1730133031447" duration="3071000" />
+      <updated>1730143518820</updated>
     </task>
-    <task id="LOCAL-00001" summary="init">
-      <option name="closed" value="true" />
-      <created>1728930892936</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1728930892936</updated>
-    </task>
-    <task id="LOCAL-00002" summary="init">
-      <option name="closed" value="true" />
-      <created>1728933614497</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1728933614497</updated>
-    </task>
-    <task id="LOCAL-00003" summary="CustomExceptionHandler added">
-      <option name="closed" value="true" />
-      <created>1728936009248</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1728936009248</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added ErrorResponse.java to notes-contract.yml">
-      <option name="closed" value="true" />
-      <created>1728985788780</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1728985788780</updated>
-    </task>
-    <task id="LOCAL-00005" summary="added html and js to project">
-      <option name="closed" value="true" />
-      <created>1729009320305</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1729009320305</updated>
-    </task>
-    <task id="LOCAL-00006" summary="added authentication">
-      <option name="closed" value="true" />
-      <created>1729165798427</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1729165798427</updated>
-    </task>
-    <task id="LOCAL-00007" summary="added full project">
-      <option name="closed" value="true" />
-      <created>1729241136696</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1729241136696</updated>
-    </task>
-    <task id="LOCAL-00008" summary="changed frontend to thymeleaf">
-      <option name="closed" value="true" />
-      <created>1729421566424</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1729421566424</updated>
-    </task>
-    <task id="LOCAL-00009" summary="CRUD completed">
-      <option name="closed" value="true" />
-      <created>1729423272354</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1729423272354</updated>
-    </task>
-    <task id="LOCAL-00010" summary="CRUD completed">
-      <option name="closed" value="true" />
-      <created>1729609155392</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1729609155392</updated>
-    </task>
-    <task id="LOCAL-00011" summary="...">
-      <option name="closed" value="true" />
-      <created>1729972631392</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1729972631393</updated>
-    </task>
-    <task id="LOCAL-00012" summary="nieszczesne notatki">
-      <option name="closed" value="true" />
-      <created>1730064940742</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1730064940742</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
-    <MESSAGE value="CustomExceptionHandler added" />
-    <MESSAGE value="added ErrorResponse.java to notes-contract.yml" />
-    <MESSAGE value="added html and js to project" />
-    <MESSAGE value="added authentication" />
-    <MESSAGE value="added full project" />
-    <MESSAGE value="changed frontend to thymeleaf" />
-    <MESSAGE value="CRUD completed" />
-    <MESSAGE value="added registration and login pages" />
-    <MESSAGE value="..." />
-    <MESSAGE value="nieszczesne notatki" />
-    <option name="LAST_COMMIT_MESSAGE" value="nieszczesne notatki" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
