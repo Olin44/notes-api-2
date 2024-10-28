@@ -41,6 +41,12 @@ paths:
             default: "asc"
             description: Sort direction, either ascending or descending. Default is `asc`.
             example: asc
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+            description: Bearer token for authorization (e.g., `Bearer <token>`).
       responses:
         '200':
           description: A paginated and sorted list of notes.

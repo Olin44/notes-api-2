@@ -64,6 +64,27 @@
             background-color: #45a049;
         }
     </style>
+    <script>
+        // Funkcja do pobierania notatek
+        async function fetchNotes() {
+            const token = localStorage.getItem('jwtToken'); // Pobierz token z localStorage
+
+            const response = await fetch('/notes', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`, // Ustaw nagłówek z tokenem
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const notesData = await response.json(); // Odbierz dane notatek
+                renderNotes(notesData); // Funkcja renderująca notatki na stronie
+            } else {
+                console.error("Błąd podczas pobierania notatek");
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -98,14 +119,30 @@
         </tbody>
     </table>
     <script>
-        window.onload = function () {
-            const token = localStorage.getItem('jwtToken');
-            fetch('/notes', {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json'
-                }
+
+
+        // Wywołaj fetchNotes po zalogowaniu
+        async function loginAndFetchNotes() {
+            const loginResponse = await fetch('/login', { /* ... parametry logowania ... */ });
+
+            if (loginResponse.ok) {
+                const tokenData = await loginResponse.json(); // Odbierz dane odpowiedzi
+                localStorage.setItem('jwtToken', tokenData.token); // Zapisz token do localStorage
+                fetchNotes(); // Wywołaj fetchNotes, aby pobrać notatki
+            }
+        }
+
+        // Wywołaj loginAndFetchNotes, gdy strona się załaduje
+        window.onload = () => {
+            loginAndFetchNotes();
+        };
+
+        function renderNotes(notesData) {
+            const container = document.getElementById('notesContainer');
+            notesData.forEach(note => {
+                const noteElement = document.createElement('div');
+                noteElement.innerText = note.title; // Przykład renderowania tytułu notatki
+                container.appendChild(noteElement);
             });
         }
     </script>

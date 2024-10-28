@@ -51,6 +51,26 @@
         }
     </style>
     <script>
+        async function fetchNotes() {
+            const token = localStorage.getItem('jwtToken'); // Pobierz token z localStorage
+            console.log("Token do użycia:", token); // Sprawdź token
+
+            const response = await fetch('/notes', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`, // Ustaw nagłówek z tokenem
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const notesData = await response.json(); // Odbierz dane notatek
+                renderNotes(notesData); // Funkcja renderująca notatki na stronie
+            } else {
+                console.error("Błąd podczas pobierania notatek", response.status, response.statusText);
+            }
+        }
+
         async function login(event) {
             event.preventDefault(); // Zatrzymaj domyślną akcję formularza
 
@@ -68,27 +88,22 @@
                 body: JSON.stringify(loginRequest)
             });
 
-            async function fetchNotes() {
-                const token = localStorage.getItem('jwtToken');
+            if (response.ok) {
+                const data = await response.json(); // Odbierz dane jako obiekt
+                const token = data.token; // Upewnij się, że to jest prawidłowy klucz do tokena
+                localStorage.setItem('jwtToken', token); // Zapisz token w localStorage
 
-                const response = await fetch('/notes', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                    }
-                });
+                fetchNotes(); // Wywołaj fetchNotes
 
-                if (response.ok) {
-                    const notesData = await response.json(); // Odbierz dane notatek
-                    // Załaduj dane do widoku (np. manipulując DOM)
-                    renderNotes(notesData); // Funkcja renderująca notatki na stronie
-                } else {
-                    console.error("Błąd podczas pobierania notatek");
-                }
+                window.location.href = '/notes'; // Przekierowanie po udanym logowaniu
+            } else {
+                const errorMessage = await response.text(); // Pobierz treść błędu
+                console.error("Odpowiedź serwera:", errorMessage); // Zobacz odpowiedź serwera
+                document.querySelector('.error-message').innerText = errorMessage; // Wyświetl błąd na stronie
             }
         }
     </script>
+
 </head>
 
 <body>

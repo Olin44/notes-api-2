@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="...">
+    <list default="true" id="004adcc8-fe88-4c59-8716-0ab4db5dd625" name="Changes" comment="nieszczesne notatki">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FeignClientInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/TokenHolder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/notes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-service/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/NotesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/NotesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-service/src/main/resources/contract/notes-contract.yml" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/resources/contract/notes-contract.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +83,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -231,7 +235,13 @@
       <workItem from="1730043106158" duration="8000" />
       <workItem from="1730044476245" duration="7900000" />
       <workItem from="1730055871443" duration="2467000" />
-      <workItem from="1730059330928" duration="5283000" />
+      <workItem from="1730059330928" duration="5664000" />
+      <workItem from="1730124240630" duration="1278000" />
+      <workItem from="1730125536096" duration="214000" />
+      <workItem from="1730125771671" duration="81000" />
+      <workItem from="1730125868176" duration="6261000" />
+      <workItem from="1730132876368" duration="110000" />
+      <workItem from="1730133031447" duration="3071000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -321,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729972631393</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="nieszczesne notatki">
+      <option name="closed" value="true" />
+      <created>1730064940742</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1730064940742</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,6 +367,11 @@
     <MESSAGE value="CRUD completed" />
     <MESSAGE value="added registration and login pages" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="nieszczesne notatki" />
+    <option name="LAST_COMMIT_MESSAGE" value="nieszczesne notatki" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

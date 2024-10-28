@@ -24,10 +24,10 @@ public class FrontendController {
     private final AuthServiceClient authServiceClient;
 
     @GetMapping("/notes")
-    public String getNotes(@RequestHeader ("Authorization") String authorizationHeader, Model model) {
+    public String getNotes(@RequestHeader ("Authorization") String authorization, Model model) {
         System.out.println("YYYYY");
-        System.out.println(authorizationHeader);
-        NotePage notePage = notesServiceClient.getNotes(0, 10, "createdAt", "ASC", authorizationHeader);
+        System.out.println(authorization);
+        NotePage notePage = notesServiceClient.getNotes(authorization,0, 10, "createdAt", "ASC");
         List<Note> notes = notePage.getContent();
 
         model.addAttribute("notes", notes);

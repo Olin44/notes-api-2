@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,16 +28,23 @@ public class NotesController implements NotesApi {
     private final NotesService notesService;
 
     @Override
-    public ResponseEntity<NotePage> notesGet(Integer page, Integer size, String sort, String direction) {
+    public ResponseEntity<NotePage> notesGet(@RequestHeader("Authorization") String authorization, Integer page, Integer size, String sort, String direction) {
+        // Możesz sprawdzić, czy nagłówek jest prawidłowy
+        System.out.println("Nagłówek Authorization: " + authorization);
+
         NotePage response = notesService.notesGet(page, size, sort, direction);
         return ResponseEntity.ok(response);
     }
+
+
 
     @Override // do wyjebania chyba
     public ResponseEntity<Note> notesIdGet(UUID id) {
         Note response = notesService.notesIdGet(id);
         return ResponseEntity.ok(response);
     }
+
+
 
     @Override
     public ResponseEntity<Void> notesIdDelete(UUID id) {

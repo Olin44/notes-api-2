@@ -16,11 +16,11 @@ import java.util.UUID;
 public interface NotesServiceClient {
 
     @GetMapping("/notes")
-    NotePage getNotes(@RequestParam(value = "page", defaultValue = "0") Integer page,
+    NotePage getNotes(@RequestHeader("Authorization") String authorization,
+                      @RequestParam(value = "page", defaultValue = "0") Integer page,
                       @RequestParam(value = "size", defaultValue = "10") Integer size,
                       @RequestParam(value = "sort", defaultValue = "createdAt") String sort,
-                      @RequestParam(value = "direction", defaultValue = "ASC") String direction,
-                      @RequestHeader("Authorization") String authorizationHeader);
+                      @RequestParam(value = "direction", defaultValue = "ASC") String direction);
 
     @GetMapping("/notes/{id}")
     Note getNoteById(@PathVariable("id") UUID id); // Pobierz notatkę do edycji
