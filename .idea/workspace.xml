@@ -4,56 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c06018e-9f89-4e6a-a952-80d32d46927a" name="Changes" comment="added react app, config cors">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app/src/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NoteDetail.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NoteForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app/src/components/NotesList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notes-app/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/notes-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/notes-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3c06018e-9f89-4e6a-a952-80d32d46927a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/auth/ValidateTokenRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/components/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes-app/src/components/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/auth/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/auth/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/pl/notes/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/test/java/com/example/demo/DemoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/AuthServiceClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/AuthenticationResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/FrontendController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/Note.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NoteCreateRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotePage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NoteUpdateRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesApiApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/NotesServiceClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/java/pl/notes/RegisterRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/addNote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/editNote.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/frontendNotes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main/resources/templates/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/notes-app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/notes-service/src/main/java/pl/notes/app/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes-app/src/components/NotesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/notes-app/src/components/NoteList.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +39,15 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/notes-app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -96,16 +65,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn idea:idea" />
@@ -113,21 +82,10 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="notes-api" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="notes-api" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -153,6 +111,19 @@
       <option name="presentableId" value="Default" />
       <updated>1730143518820</updated>
     </task>
+    <task id="LOCAL-00001" summary="added react app, config cors">
+      <option name="closed" value="true" />
+      <created>1730153480070</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730153480070</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added react app, config cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="added react app, config cors" />
   </component>
 </project>
