@@ -3,6 +3,7 @@ package pl.notes.auth.token;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.time.Clock;
@@ -11,6 +12,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Date;
 
 @RequiredArgsConstructor
+@Component
 public class TokenGenerator {
 
     private final Key secretKey;
