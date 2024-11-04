@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="notes-api" />
         <module name="notes-api-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="notes-api" target="21" />
       <module name="notes-api (1)" target="21" />
       <module name="notes-api (2)" target="21" />
       <module name="notes-api (3)" target="21" />

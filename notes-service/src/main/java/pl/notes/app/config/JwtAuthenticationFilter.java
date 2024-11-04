@@ -6,22 +6,22 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pl.notes.config.JwtService;
+import pl.auth.client.model.ValidateTokenRequest;
+import pl.auth.client.model.ValidateTokenResponse;
+import pl.notes.app.auth.AuthClient;
 
 import java.io.IOException;
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService;
-    private final UserDetailsService userDetailsService;
+    private final AuthClient authClient;
+
     @Override
     protected void doFilterInternal(
             @NonNull HttpServletRequest request,
@@ -29,28 +29,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");
-        final String jwt;
-        final String userEmail;
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+        final String token = authHeader.substring(7);
+        if (isTokenValid(token)) {
             filterChain.doFilter(request, response);
-            return ;
+        } else {
+            throw new RuntimeException("Invalid token!");
         }
-        jwt = authHeader.substring(7);
-        userEmail = jwtService.extractUsername(jwt);
-        if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
-            if (jwtService.isTokenValid(jwt, userDetails)) {
-                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                        userDetails,
-                        null,
-                        userDetails.getAuthorities()
-                );
-                authToken.setDetails(
-                        new WebAuthenticationDetailsSource().buildDetails(request)
-                );
-                SecurityContextHolder.getContext().setAuthentication(authToken);
-            }
-        }
-        filterChain.doFilter(request, response);
+    }
+
+    private Boolean isTokenValid(String token) {
+        ResponseEntity<ValidateTokenResponse> validateTokenResponseResponseEntity = authClient.validateToken(new ValidateTokenRequest(token));
+
+        return Optional.ofNullable(validateTokenResponseResponseEntity.getBody())
+                .map(ValidateTokenResponse::getIsValid)
+                .orElse(false);
     }
 }
